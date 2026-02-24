@@ -28,6 +28,14 @@ if (menuToggle) {
 // Datos de proyectos
 const proyectosData = {
     1: {
+        title: 'Inflation Tracker',
+        description: 'Aplicación web que consume datos oficiales (INDEC y World Bank), normaliza formatos y visualiza tendencias con gráficos dinámicos, comparación entre países y simulador de poder adquisitivo. Dashboard interactivo profesional con manejo de latencia API, precarga, cache en memoria y renderizado SVG personalizado.',
+        image: 'img/inflacion.png',
+        techs: ['Vanilla JS', 'Fetch API', 'SVG dinámico', 'APIs públicas', 'Cache', 'Skeleton loading'],
+        demoLink: 'https://inflationdashboardworld.netlify.app/',
+        codeLink: '#'
+    },
+    2: {
         title: 'Adivina Colores Online',
         description: 'Juego online multiplayer donde debes adivinar una secuencia secreta de 4 colores en máximo 10 intentos. Incluye modo solo contra la máquina, modo multijugador con chat en tiempo real, sistema de ranking global competitivo, y cálculo de puntos basado en precisión y velocidad. Con efectos de victoria, sonidos dinámicos y estadísticas personales detalladas.',
         image: 'img/juego.png',
@@ -35,7 +43,7 @@ const proyectosData = {
         demoLink: 'https://buscacolores.netlify.app/',
         codeLink: '#'
     },
-    2: {
+    3: {
         title: 'OCR Editor',
         description: 'Herramienta web para editar texto dentro de imágenes sin necesidad de Photoshop. Perfecta para docentes y creadores de material escolar. Detecta automáticamente texto, permite modificarlo, cambiar tamaño, color y fuente, luego descarga la imagen editada lista para usar.',
         image: 'img/ocr-editor.png',
