@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">Beto</div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Hola, soy Beto</h1>
+            <p class="hero-subtitle">Desarrollador web & Diseñador</p>
+            <p class="hero-description">Creo experiencias digitales modernas y funcionales</p>
+            <a href="#proyectos" class="cta-button">Ver mi trabajo</a>
+        </div>
+        <div class="hero-scroll">
+            <span>Desplázate</span>
+            <div class="scroll-icon">↓</div>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section class="proyectos" id="proyectos">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <div class="proyecto-header">
+                        <h3>Proyecto 1</h3>
+                        <span class="proyecto-tech">HTML • CSS • JS</span>
+                    </div>
+                    <p>Descripción breve de tu primer proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <a href="#" class="proyecto-link">Ver proyecto →</a>
+                </div>
+
+                <div class="proyecto-card">
+                    <div class="proyecto-header">
+                        <h3>Proyecto 2</h3>
+                        <span class="proyecto-tech">React • Node • MongoDB</span>
+                    </div>
+                    <p>Descripción breve de tu segundo proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <a href="#" class="proyecto-link">Ver proyecto →</a>
+                </div>
+
+                <div class="proyecto-card">
+                    <div class="proyecto-header">
+                        <h3>Proyecto 3</h3>
+                        <span class="proyecto-tech">Vue • Firebase • API</span>
+                    </div>
+                    <p>Descripción breve de tu tercer proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <a href="#" class="proyecto-link">Ver proyecto →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mí Section -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>Soy un desarrollador apasionado por crear soluciones web innovadoras. Con experiencia en frontend y backend, me encanta resolver problemas complejos con código limpio y eficiente.</p>
+                    <p>En mi tiempo libre, contribuyo a proyectos open source y siempre estoy aprendiendo nuevas tecnologías.</p>
+                    <div class="skills">
+                        <h3>Habilidades</h3>
+                        <div class="skills-grid">
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">React</span>
+                            <span class="skill">HTML/CSS</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">Git</span>
+                            <span class="skill">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Ponte en contacto</h2>
+            <p class="contacto-subtitle">¿Tienes una idea o proyecto? Me encantaría escucharte</p>
+            <div class="contacto-content">
+                <a href="mailto:tu@email.com" class="contact-link">
+                    <span class="contact-icon">✉</span>
+                    <span>tu@email.com</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link">
+                    <span class="contact-icon">in</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com" target="_blank" class="contact-link">
+                    <span class="contact-icon">⚙</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Beto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
