@@ -60,35 +60,59 @@
         </div>
     </section>
 
+    <!-- Modal Proyecto -->
+    <div class="proyecto-modal" id="proyectoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Proyecto">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-tech">
+                        <h4>Tecnologías</h4>
+                        <div id="modalTechs" class="tech-list"></div>
+                    </div>
+                    <div class="modal-links">
+                        <a id="modalDemoLink" href="#" class="modal-button">Ver Demo</a>
+                        <a id="modalCodeLink" href="#" class="modal-button secondary" target="_blank">Ver Código</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Proyectos Section -->
     <section class="proyectos" id="proyectos">
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="proyectos-grid">
-                <div class="proyecto-card">
+                <div class="proyecto-card" data-proyecto="1">
                     <div class="proyecto-header">
-                        <h3>Proyecto 1</h3>
+                        <h3>Portafolio Personal</h3>
                         <span class="proyecto-tech">HTML • CSS • JS</span>
                     </div>
-                    <p>Descripción breve de tu primer proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <p>Sitio web moderno y responsivo para mostrar proyectos y habilidades. Incluye dark mode y animaciones suaves.</p>
                     <a href="#" class="proyecto-link">Ver proyecto →</a>
                 </div>
 
-                <div class="proyecto-card">
+                <div class="proyecto-card" data-proyecto="2">
                     <div class="proyecto-header">
-                        <h3>Proyecto 2</h3>
+                        <h3>App de Tareas</h3>
                         <span class="proyecto-tech">React • Node • MongoDB</span>
                     </div>
-                    <p>Descripción breve de tu segundo proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <p>Aplicación full-stack para gestionar tareas diarias. Con autenticación de usuarios y almacenamiento en base de datos.</p>
                     <a href="#" class="proyecto-link">Ver proyecto →</a>
                 </div>
 
-                <div class="proyecto-card">
+                <div class="proyecto-card" data-proyecto="3">
                     <div class="proyecto-header">
-                        <h3>Proyecto 3</h3>
-                        <span class="proyecto-tech">Vue • Firebase • API</span>
+                        <h3>Tienda Online</h3>
+                        <span class="proyecto-tech">Vue • Firebase • Stripe</span>
                     </div>
-                    <p>Descripción breve de tu tercer proyecto. Explica qué hace y qué tecnologías utilizaste.</p>
+                    <p>E-commerce con carrito de compras y pasarela de pago integrada. Interfaz intuitiva y segura para usuarios.</p>
                     <a href="#" class="proyecto-link">Ver proyecto →</a>
                 </div>
             </div>

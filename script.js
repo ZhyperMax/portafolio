@@ -25,6 +25,86 @@ if (menuToggle) {
     });
 }
 
+// Datos de proyectos
+const proyectosData = {
+    1: {
+        title: 'Portafolio Personal',
+        description: 'Sitio web moderno y responsivo creado con HTML, CSS y JavaScript vanilla. Incluye dark mode con persistencia en localStorage, animaciones suaves y diseño mobile-first. Perfecto para mostrar proyectos y habilidades de forma profesional.',
+        image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%233b82f6" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EPortafolio Personal%3C/text%3E%3C/svg%3E',
+        techs: ['HTML5', 'CSS3', 'JavaScript', 'Dark Mode', 'Responsive'],
+        demoLink: '#',
+        codeLink: '#'
+    },
+    2: {
+        title: 'App de Tareas',
+        description: 'Aplicación full-stack para gestionar tareas diarias con autenticación de usuarios. Backend con Node.js y Express, base de datos MongoDB, y frontend React con estado global. Incluye características como crear, editar, eliminar tareas y marcarlas como completadas.',
+        image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%2310b981" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EApp de Tareas%3C/text%3E%3C/svg%3E',
+        techs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT Auth'],
+        demoLink: '#',
+        codeLink: '#'
+    },
+    3: {
+        title: 'Tienda Online',
+        description: 'E-commerce completo con carrito de compras y pasarela de pago Stripe integrada. Desarrollado con Vue.js en el frontend y Firebase para autenticación y almacenamiento. Interfaz intuitiva, búsqueda de productos, filtros y checkout seguro.',
+        image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f59e0b" width="400" height="300"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ETienda Online%3C/text%3E%3C/svg%3E',
+        techs: ['Vue.js', 'Firebase', 'Stripe', 'JavaScript', 'Tailwind CSS'],
+        demoLink: '#',
+        codeLink: '#'
+    }
+};
+
+// Modal
+const proyectoModal = document.getElementById('proyectoModal');
+const modalClose = document.getElementById('modalClose');
+const proyectoLinks = document.querySelectorAll('.proyecto-link');
+
+function openModal(proyectoId) {
+    const data = proyectosData[proyectoId];
+    if (!data) return;
+
+    document.getElementById('modalImage').src = data.image;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalDescription').textContent = data.description;
+    
+    const techsList = document.getElementById('modalTechs');
+    techsList.innerHTML = data.techs.map(tech => `<span>${tech}</span>`).join('');
+    
+    document.getElementById('modalDemoLink').href = data.demoLink;
+    document.getElementById('modalCodeLink').href = data.codeLink;
+    
+    proyectoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    proyectoModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Event listeners para abrir modal
+proyectoLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const proyectoId = link.closest('.proyecto-card').getAttribute('data-proyecto');
+        openModal(proyectoId);
+    });
+});
+
+// Cerrar modal
+modalClose.addEventListener('click', closeModal);
+proyectoModal.addEventListener('click', (e) => {
+    if (e.target === proyectoModal) {
+        closeModal();
+    }
+});
+
+// Cerrar modal con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
 // Cerrar menú al hacer click en un link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
