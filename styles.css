@@ -258,6 +258,239 @@ body {
     color: var(--gray-dark);
 }
 
+/* Proyecto Destacado */
+.proyecto-destacado {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+body.dark .proyecto-destacado {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 100%);
+}
+
+    .destacado-badge {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .destacado-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .destacado-image {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: var(--transition);
+    }
+
+    .destacado-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+    }
+
+    .destacado-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .destacado-gallery {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    body.dark .destacado-gallery {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .destacado-main {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .destacado-thumbs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .destacado-thumbs img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark .destacado-thumbs img {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .destacado-tags {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .destacado-tags .tag {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .destacado-tags .tag {
+        background: rgba(30, 41, 59, 0.95);
+        color: white;
+    }
+
+    .destacado-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+    }
+
+    .destacado-subtitle {
+        font-size: 1.2rem;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .destacado-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--gray-dark);
+        margin-bottom: 2rem;
+    }
+
+    .destacado-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--primary);
+    }
+
+    .feature-icon {
+        background: var(--accent);
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+
+    .destacado-techs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .destacado-techs {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .destacado-techs span {
+        background: var(--gray-light);
+        padding: 0.4rem 0.9rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: var(--primary);
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark .destacado-techs span {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .destacado-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .destacado-button {
+        flex: 1;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        transition: var(--transition);
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .destacado-button.primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        border: 2px solid var(--accent);
+    }
+
+    .destacado-button.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+    }
+
+    .destacado-button.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+    }
+
+    .destacado-button.secondary:hover {
+        background: var(--accent);
+        color: white;
+    }
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -632,6 +865,27 @@ body.dark .modal-tech h4 {
 }
 
 .modal-links {
+
+        .destacado-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .destacado-title {
+            font-size: 2rem;
+        }
+
+        .destacado-features {
+            grid-template-columns: 1fr;
+        }
+
+        .destacado-buttons {
+            flex-direction: column;
+        }
+
+        .destacado-thumbs img {
+            height: 70px;
+        }
     display: flex;
     gap: 1rem;
 }
@@ -795,6 +1049,22 @@ body.dark .modal-button {
 
     .contact-link {
         flex: 0 1 100%;
+
+        .destacado-title {
+            font-size: 1.5rem;
+        }
+
+        .destacado-subtitle {
+            font-size: 1rem;
+        }
+
+        .destacado-description {
+            font-size: 0.95rem;
+        }
+
+        .destacado-thumbs img {
+            height: 60px;
+        }
     }
 }
 
