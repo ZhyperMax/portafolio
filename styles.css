@@ -323,6 +323,7 @@ body.dark .proyecto-destacado {
         width: 100%;
         height: auto;
         display: block;
+        cursor: zoom-in;
     }
 
     .destacado-thumbs {
@@ -337,10 +338,45 @@ body.dark .proyecto-destacado {
         object-fit: cover;
         border-radius: 10px;
         border: 1px solid rgba(0, 0, 0, 0.08);
+        cursor: zoom-in;
     }
 
     body.dark .destacado-thumbs img {
         border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 3000;
+        padding: 2rem;
+    }
+
+    .lightbox.active {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: min(1200px, 92vw);
+        max-height: 85vh;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
     }
 
     .destacado-tags {
