@@ -13,6 +13,13 @@
     --transition: all 0.3s ease;
 }
 
+body.dark {
+    --primary: #ffffff;
+    --secondary: #0f172a;
+    --gray-light: #1e293b;
+    --gray-dark: #cbd5e1;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -97,6 +104,15 @@ body {
     transition: var(--transition);
 }
 
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.5rem;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -151,6 +167,13 @@ body {
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cta-button {
     display: inline-block;
     padding: 0.875rem 2rem;
@@ -160,13 +183,25 @@ body {
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
     animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    box-shadow: none;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+}
+
+.cta-button.secondary:hover {
+    background: var(--accent);
+    color: white;
 }
 
 .hero-scroll {
@@ -194,6 +229,33 @@ body {
 @keyframes float {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Métricas */
+.metricas {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.metrica {
+    text-align: center;
+}
+
+.metrica-numero {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.metrica-label {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
 }
 
 /* Container */
@@ -235,7 +297,12 @@ body {
 
 .proyecto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .proyecto-card {
+    background: var(--gray-light);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .proyecto-header {
@@ -364,6 +431,52 @@ body {
     transform: translateY(-2px);
 }
 
+/* Dark Mode */
+body.dark {
+    background: var(--secondary);
+}
+
+body.dark .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .nav-links a {
+    color: white;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+body.dark .hero-scroll span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .proyectos {
+    background: var(--secondary);
+}
+
+body.dark .sobre {
+    background: var(--gray-light);
+}
+
+body.dark .theme-icon {
+    display: inline-block;
+}
+
+body.dark .theme-icon::after {
+    content: '☀️';
+    font-size: 1.3rem;
+    position: absolute;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+body:not(.dark) .theme-icon::after {
+    content: '☀️';
+}
+
 .contact-icon {
     font-size: 1.2rem;
     font-weight: 700;
@@ -376,6 +489,11 @@ body {
     padding: 2rem 0;
     text-align: center;
     font-size: 0.9rem;
+}
+
+body.dark .footer {
+    background: #1e293b;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Animaciones */
@@ -462,6 +580,14 @@ body {
     }
 
     .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .metricas {
+        gap: 2rem;
+    }
+
+    .metrica-numero {
         font-size: 1.5rem;
     }
 

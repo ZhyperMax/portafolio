@@ -1,6 +1,22 @@
 // Menú toggle para mobile
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
+const themeToggle = document.getElementById('themeToggle');
+
+// Toggle Dark Mode
+if (themeToggle) {
+    // Verificar preferencia guardada
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}
 
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -25,9 +41,13 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll <= 0) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = document.body.classList.contains('dark') 
+            ? 'rgba(15, 23, 42, 0.95)' 
+            : 'rgba(255, 255, 255, 0.95)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.background = document.body.classList.contains('dark')
+            ? 'rgba(15, 23, 42, 0.98)'
+            : 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
     }
     
@@ -55,15 +75,6 @@ document.querySelectorAll('.proyecto-card').forEach((card, index) => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = `all 0.5s ease ${index * 0.1}s`;
     observer.observe(card);
-});
-
-// Efecto paralax sutil en hero
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrollPosition < window.innerHeight) {
-        hero.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    }
 });
 
 console.log('✨ Portafolio cargado correctamente');
